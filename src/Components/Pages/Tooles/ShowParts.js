@@ -14,7 +14,7 @@ const navigate=useNavigate()
            
             <article class="overflow-hidden rounded-lg shadow-lg">
 
-                <a href="#">
+                {/* <a href="#">
                     <img alt="Placeholder" class="block h-auto w-full" src={part.picture}/>
                 </a>
 
@@ -30,7 +30,28 @@ const navigate=useNavigate()
                         <button onClick={() => navigateTOShowParts(_id)} className='btn btn-primary text-white mt-5'>purchase</button>
                     </h1>
                     
-                </header>
+                </header> */}
+                <div class="wrapper bg-gray-400 antialiased text-gray-900">
+                    <div>
+
+                        <img src={part.picture} alt=" random imgee" class="w-50 h-52 flex items-center justify-center object-cover object-center rounded-lg shadow-md"/>
+
+                            <div class="relative px-4 -mt-16  ">
+                                <div class="bg-white p-6 rounded-lg shadow-lg">
+                                    
+
+                                <p>Name : {part.name}</p>
+                                <p>Price : {part.Price}</p>
+                                <p>Order-Quantity : {part.orderquantity}</p>
+                                <p>Available-quantity : {part.availablequantity}</p>
+                                <button onClick={() => navigateTOShowParts(_id)} className='btn btn-primary text-white mt-5'>purchase</button>
+
+                                    
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
 
                
 

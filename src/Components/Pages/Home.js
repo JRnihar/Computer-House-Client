@@ -2,6 +2,7 @@ import React from 'react';
 import ReviewItem from './ReviewItem';
 // import ReviewItem from './ReviewItem';
 import Tooles from './Tooles/Tooles';
+import img1 from '../../img/computer-helmet-construction-tools-white-background-table-lamp-60023628.jpg'
 
 const Home = () => {
     return (
@@ -12,11 +13,8 @@ const Home = () => {
                     <div class=" px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
                         <div class="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
                             <div class="max-w-lg">
-                                <h1 class="text-xl tracking-wide text-white text-gray-800 lg:text-3xl lg:text-4xl">Set your
-                                    Title</h1>
-                                <p class="mt-4 text-gray-300 text-gray-600">Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae
-                                    laudantium quod rem voluptatem eos accusantium cumque.</p>
+                                <h1 class="text-xl tracking-wide text-white text-gray-800 lg:text-3xl lg:text-4xl">My Computer House</h1>
+                                <p class="mt-4 text-gray-300 text-gray-600">A computer is a digital electronic machine that can be programmed to carry out sequences of arithmetic or logical operations (computation) automatically. Modern computers can perform generic sets of operations known as programs. These programs enable computers to perform a wide range of tasks. </p>
                                 <div class="mt-6">
                                     <a href="#"
                                         class="inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400">
@@ -25,8 +23,8 @@ const Home = () => {
                             </div>
                         </div>
                         <div class="flex items-center justify-center w-full mt-2 lg:h-96 lg:w-1/2">
-                            <img class="object-cover w-full max-w-2xl rounded-md lg:h-full"
-                                src="https://source.unsplash.com/user/erondu/1600x900" alt="apple watch photo"/>
+                            <img class=" w-full max-w-2xl rounded-md lg:h-full mb-5 mt-5"
+                                src="http://www.ictworks.org/sites/default/files/uploaded_pics/2011/desktop_laptop_or_tablet.gif" alt="apple watch photo"/>
                         </div>
                     </div>
                 </div>
@@ -36,16 +34,16 @@ const Home = () => {
             <section>
                 <div class="carousel w-full">
                     <div id="item1" class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/car?w=800&h=200&hash=8B7BCDC2" class="w-full" />
+                        <img src={img1} class="w-full h-50" />
                     </div>
                     <div id="item2" class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB" class="w-full" />
+                        <img src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB" class="w-full h-50" />
                     </div>
                     <div id="item3" class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/car?w=800&h=200&hash=A89D0DE6" class="w-full" />
+                        <img src="https://api.lorem.space/image/car?w=800&h=200&hash=A89D0DE6" class="w-full h-50" />
                     </div>
                     <div id="item4" class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/car?w=800&h=200&hash=225E6693" class="w-full" />
+                        <img src="https://api.lorem.space/image/car?w=800&h=200&hash=225E6693" class="w-full h-50" />
                     </div>
                 </div>
                 <div class="flex justify-center w-full py-2 gap-2">
@@ -103,7 +101,7 @@ const Home = () => {
                 
                     <div class="lg:flex items-center justify-between">
                         <div class="lg:w-1/3">
-                            <h1 class="text-4xl font-semibold leading-9 text-gray-800 dark:text-white">Indoor Interiors</h1>
+                            <h1 class="text-4xl font-semibold leading-9 text-gray-800 dark:text-white">Our Catalogue</h1>
                             <p class="text-base leading-6 mt-4 text-gray-600 dark:text-gray-100">Get inspired by our curated selection of luxiwood interiors. We hope get inspired to have luxiwood interior yourself. You’ll find tips here where you can buy a lot of cool furniture.</p>
                             <button role="button" aria-label="view catalogue" class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none mt-6 md:mt-8 text-base font-semibold leading-none text-gray-800 dark:text-white flex items-center hover:underline">
                                 View Catalogue
@@ -116,12 +114,12 @@ const Home = () => {
                         </div>
                         <div class="lg:w-7/12 lg:mt-0 mt-8">
                             <div class="w-full h-full bg-red-200">
-                                <img src="https://i.ibb.co/cbyDY74/pexels-max-vakhtbovych-6782351-1-1.png" alt="apartment design" class="w-full sm:block hidden" />
-                                <img src="https://i.ibb.co/ZVPGjGJ/pexels-max-vakhtbovych-6782351-1.png" alt="apartment design" class="sm:hidden block w-full" />
+                                <img src="https://thumbs.dreamstime.com/b/computer-helmet-construction-tools-white-background-table-lamp-60023628.jpg" alt="apartment design" class="w-full sm:block hidden" />
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHVBpi6iqG4GetNDfszidgU7sM3TQ2kUFS0w&usqp=CAU" alt="apartment design" class="sm:hidden block w-full" />
                             </div>
                             <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-8 gap-6 lg:mt-8 md:mt-6 mt-4">
-                                <img src="https://i.ibb.co/4Jrp5TB/pexels-max-vakhtbovych-6782370-1.png" class="w-full" alt="kitchen" />
-                                <img src="https://i.ibb.co/0Jv3FSy/pexels-max-vakhtbovych-6436799-1-1.png" class="w-full" alt="sitting room" />
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHVBpi6iqG4GetNDfszidgU7sM3TQ2kUFS0w&usqp=CAU" class="w-full" alt="kitchen" />
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAcL8L8Jfjoz2qEdk3EakCAHsexuFWZjBbLw&usqp=CAU" class="w-full" alt="sitting room" />
                             </div>
                         </div>
                     </div>
