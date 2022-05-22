@@ -22,14 +22,13 @@ const Header = () => {
         {/* <li><Link to='/'>Home</Link></li> */}
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/Blog'>Blog</Link></li>
-        <li><Link to='/login'>Login</Link></li>
-        <li><Link to='/login'>About</Link></li>
+        <li><Link to='/portfolio'>My Portfolio</Link></li>
         <li>{user
         ?
 
             <button onClick={handleSignOut}>Sing Out</button>
 
-          :  <Link to='/login'>About</Link>}</li>
+            : <Link to='/login'>Login</Link> }</li>
 
     </>
     return (
