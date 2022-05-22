@@ -14,15 +14,38 @@ const PartsDetails = () => {
         const number = e.target.number.value;
         let { name, orderquantity, Discription, price, availablequantity } = service
 
-
-       
             orderquantity = parseInt(orderquantity) + parseInt(number)
             console.log(orderquantity);
             service = { orderquantity, Discription, Discription, availablequantity, name, price }
             console.log(service);
+    
+        const url = `http://localhost:5000/part/${Id}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-Type': 'application/json'
+            },
+            body: JSON.stringify(service),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                
+            })
+    }
 
-        
-        
+
+
+
+    const handleDecrese = e => {
+        e.preventDefault()
+        const number = e.target.number.value;
+        let { name, orderquantity, Discription, price, availablequantity } = service
+
+        orderquantity = parseInt(orderquantity) - parseInt(number)
+        console.log(orderquantity);
+        service = { orderquantity, Discription, Discription, availablequantity, name, price }
+        console.log(service);
 
         const url = `http://localhost:5000/part/${Id}`
         fetch(url, {
@@ -35,6 +58,7 @@ const PartsDetails = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+
             })
     }
 
@@ -84,17 +108,38 @@ const PartsDetails = () => {
                         <input type="text" placeholder="Address" class="input input-bordered w-full max-w-xs" required />
 
                     </div>
-                    {/* <div class="form-control w-full max-w-xs">
+                    <form className='d-flex ' onSubmit={handleSubmit}>
+                    <div class="form-control w-full max-w-xs">
                         <label class="label">
                             <span class="label-text">Quantity</span>
                        
                         </label>
-                        <input type="number" name='number' placeholder="Number" class="input input-bordered w-full max-w-xs" required />
+                            <input type="number" name='number' placeholder="Quantity Increase " class="input input-bordered w-full max-w-xs" required />
                         
-                    </div> */}
-                    <form className='d-flex ' onSubmit={handleSubmit}>
-                        <input type="number" name="number" className='form-control' />
-                        <input className='btn btn-success ms-2' type="submit" value="Increase" />
+                    </div>
+                   
+                      
+                <div className='flex'>
+                            <input className='btn btn-success ms-2 m-5 text-white' type="submit" value="Increase" />
+                          
+                </div>
+
+                    </form>
+                    <form className='d-flex ' onSubmit={handleDecrese}>
+                    <div class="form-control w-full max-w-xs">
+                        <label class="label">
+                            <span class="label-text">Quantity</span>
+                       
+                        </label>
+                            <input type="number" name='number' placeholder="Quantity Decrease " class="input input-bordered w-full max-w-xs" required />
+                        
+                    </div>
+                   
+                      
+                <div className='flex'>
+                            <input className='btn btn-success ms-2 m-5 text-white' type="submit" value="Decrease" />
+                          
+                </div>
 
                     </form>
 

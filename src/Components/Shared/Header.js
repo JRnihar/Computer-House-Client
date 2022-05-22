@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase.init';
 import Loading from './Loading';
 
@@ -20,15 +20,22 @@ const Header = () => {
     }
     const menuItem = <>
         {/* <li><Link to='/'>Home</Link></li> */}
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/Blog'>Blog</Link></li>
-        <li><Link to='/portfolio'>My Portfolio</Link></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/Blog'>Blog</NavLink></li>
+        <li><NavLink to='/portfolio'>My Portfolio</NavLink></li>
+        <li>{user &&
+
+
+
+
+            <NavLink to='/dashboard'>DashBoard</NavLink >}</li>
         <li>{user
         ?
 
             <button onClick={handleSignOut}>Sing Out</button>
 
-            : <Link to='/login'>Login</Link> }</li>
+            : <NavLink to='/login'>Login</NavLink > }</li>
+       
 
     </>
     return (
@@ -44,7 +51,7 @@ const Header = () => {
                                 {menuItem}
                             </ul>
                         </div>
-                        <a class="btn btn-ghost normal-case text-xl">Doctor Portal</a>
+                        <Link to='/home' class="btn btn-ghost normal-case text-xl">Computer House</Link>
                     </div>
                     <div class="navbar-center hidden lg:flex">
                         <ul class="menu menu-horizontal p-0">

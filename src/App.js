@@ -1,5 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import DashBoard from './Components/DashBoard/DashBoard';
+import MyOrder from './Components/DashBoard/MyOrder';
+import MyProfile from './Components/DashBoard/MyProfile';
+import MyReview from './Components/DashBoard/MyReview';
 import Blog from './Components/Pages/Blog';
 import Home from './Components/Pages/Home';
 import MyPortfolio from './Components/Pages/MyPortfolio';
@@ -26,8 +30,20 @@ function App() {
         <RequireAuth>
             <PartsDetails></PartsDetails>
         </RequireAuth>
-      }></Route>
+      }>
+
+      </Route>
       <Route path='/login' element={<Login></Login>}></Route>
+      <Route path='/dashboard' element={
+        <RequireAuth>
+            <DashBoard></DashBoard>
+        </RequireAuth>
+      }>
+          <Route index element={<MyOrder></MyOrder>}></Route>
+              {/* <Route path='/order' element={<MyOrder></MyOrder>}></Route> */}
+         <Route path='review' element={<MyReview></MyReview>}></Route>
+         <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+      </Route>
       <Route path='/singUp' element={<SingUp></SingUp>}></Route>
       <Route path='/blog' element={<Blog></Blog> }></Route>
         <Route path='/portfolio' element={<MyPortfolio></MyPortfolio> }></Route>
@@ -36,6 +52,9 @@ function App() {
     <Footer></Footer>
   
     </div>
+        //     <Route path='/order' element={<MyOrder></MyOrder>}></Route>
+        // <Route path='/review' element={<MyReview></MyReview>}></Route>
+        // <Route path='/profile' element={<MyProfile></MyProfile>}></Route>
   );
 }
 
