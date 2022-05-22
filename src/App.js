@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Blog from './Components/Pages/Blog';
 import Home from './Components/Pages/Home';
+import PartsDetails from './Components/Pages/Tooles/PartsDetails';
 import Footer from './Components/Shared/Footer';
 import Header from './Components/Shared/Header';
 // import Loading from './Components/Shared/Loading';
@@ -19,7 +20,9 @@ function App() {
    
     <Routes>
       <Route path='/' element={<Home></Home>}></Route>
-      {/* <Route path='/' element={<Loading></Loading>}></Route> */}
+      <Route path='/Home' element={<Home></Home>}></Route>
+      <Route path='/Home/:Id' element={<PartsDetails></PartsDetails>}></Route>
+     
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/singUp' element={<SingUp></SingUp>}></Route>
       <Route path='/blog' element={
