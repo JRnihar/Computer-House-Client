@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import ShowParts from './ShowParts';
 
 const Tooles = () => {
-    const[parts,setParts]=useState([])
+    // const[parts,setParts]=useState([])
+    const[tools,setTooled]=useState([])
 
     useEffect(()=>{
         fetch('http://localhost:5000/part')
         .then(res=>res.json())
-        .then(data=>setParts(data))
+            .then(data => setTooled(data))
     },[])
     return (
         <div>
@@ -17,7 +18,7 @@ const Tooles = () => {
             <div class=" my-12 mx-auto px-4 md:px-12">
                 <div class="flex flex-wrap -mx-1 lg:-mx-4">
                     {
-                        parts.map(part => <ShowParts key={part._id} part={part}></ShowParts>)
+                        tools.map(tool => <ShowParts key={tool._id} tool={tool}></ShowParts>)
                     }
              </div>
          </div>
