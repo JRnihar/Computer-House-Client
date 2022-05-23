@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithGoogle, useSignInWithGithub } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase.init';
+import useToken from '../../Hooks/useToken';
 import Loading from './Loading';
 
 const SocialLogin = () => {
@@ -10,9 +11,12 @@ const SocialLogin = () => {
     const navigate = useNavigate()
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
-    if (user || gituser) {
-        navigate(from, { replace: true });
-    }
+    const [token] = useToken(user || gituser);
+   
+        if (token || user || gituser) {
+            navigate(from, { replace: true });
+        }
+   
     let errorElement;
 
     if (loading || loading1) {

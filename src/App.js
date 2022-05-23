@@ -1,9 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import DashBoard from './Components/DashBoard/DashBoard';
+import MakeAdmin from './Components/DashBoard/MakeAdmin';
+import ManageOrder from './Components/DashBoard/ManageOrder';
+import ManageProducts from './Components/DashBoard/ManageProducts';
 import MyOrder from './Components/DashBoard/MyOrder';
+import MyProduct from './Components/DashBoard/MyProduct';
 import MyProfile from './Components/DashBoard/MyProfile';
 import MyReview from './Components/DashBoard/MyReview';
+import UpdateProfile from './Components/DashBoard/UpdateProfile';
 import Blog from './Components/Pages/Blog';
 import Home from './Components/Pages/Home';
 import MyPortfolio from './Components/Pages/MyPortfolio';
@@ -40,9 +45,14 @@ function App() {
         </RequireAuth>
       }>
           <Route index element={<MyOrder></MyOrder>}></Route>
-              {/* <Route path='/order' element={<MyOrder></MyOrder>}></Route> */}
+            
          <Route path='review' element={<MyReview></MyReview>}></Route>
          <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='updateprofile/:id' element={<UpdateProfile></UpdateProfile>}></Route>
+         <Route path='manageOrder' element={<ManageOrder></ManageOrder>}></Route>
+          <Route path='product' element={<MyProduct></MyProduct>}></Route>
+          <Route path='makeAdmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='manageProducts' element={<ManageProducts></ManageProducts>}></Route>
       </Route>
       <Route path='/singUp' element={<SingUp></SingUp>}></Route>
       <Route path='/blog' element={<Blog></Blog> }></Route>

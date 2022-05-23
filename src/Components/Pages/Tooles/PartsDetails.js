@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../../Firebase.init';
 import useParts from '../../../Hooks/useParts';
 
@@ -9,7 +9,9 @@ const PartsDetails = () => {
     const [user, loading] = useAuthState(auth);
     const { Id } = useParams()
     let [service, setService] = useParts(Id)
-    const handleSubmit = e => {
+    const navigate=useNavigate()
+    const{email}=user
+    const handleIncrease = e => {
         e.preventDefault()
         const number = e.target.number.value;
         let { name, orderquantity, Discription, price, availablequantity } = service
@@ -62,34 +64,73 @@ const PartsDetails = () => {
             })
     }
 
+
+  
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const address = e.target.address.value;
+        const name = e.target.name.value
+        // const phone = e.target.phone.value
+        const productName = service.name
+        const img = service.picture
+        const description = service.Discription;
+        const order = service.orderquantity;
+        const availableOrder = service.availablequantity;
+        const price = service.Price
+
+        const product = {
+            address,
+            name,
+            // phone,
+            productName,
+            img,
+            description,
+            order,
+            availableOrder,
+            price
+        }
+        console.log(product);
+        const newProduct = {
+            ...product, email: email
+        }
+        await axios.post('http://localhost:5000/addItem', newProduct)
+            .then(function (res) {
+                if (res?.data?.insertedId) {
+                   
+                    navigate('/dashboard')
+                }
+            })
+    }
+
     return (
         <div>
             <div class="max-w-2xl mx-4 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-16 bg-white shadow-xl rounded-lg text-gray-900">
-                <div class="rounded-t-lg h-32 overflow-hidden">
-                    <img class="object-cover object-top w-full" src='https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt='Mountain' />
-                </div>
-                <div class="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
-                    <img class="object-cover object-center h-32" src={service.picture} alt='Woman looking front' />
-                </div>
-                <div className='px-6' >
-                    <h2 class="font-semibold">Name : {service.name}</h2>
-                    <h2 class="font-semibold">Price : {service.Price}</h2>
-                    <h2 class="font-semibold">Order-quantity : {service.orderquantity}</h2>
-                    <h2 class="font-semibold">Available-quantity : {service.availablequantity}</h2>
-                    <p class="font-semibold">Description : {service.Discription}</p>
+               <div>
+                    <form onSubmit={handleSubmit}>
+                    <div class="rounded-t-lg h-32 overflow-hidden">
+                        <img class="object-cover object-top w-full" src='https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt='Mountain' />
+                    </div>
+                    <div class="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
+                        <img class="object-cover object-center h-32" src={service.picture} alt='Woman looking front' />
+                    </div>
+                    <div className='px-6' >
+                        <h2 class="font-semibold">Name : {service.name}</h2>
+                        <h2 class="font-semibold">Price : {service.Price}</h2>
+                        <h2 class="font-semibold">Order-quantity : {service.orderquantity}</h2>
+                        <h2 class="font-semibold">Available-quantity : {service.availablequantity}</h2>
+                        <p class="font-semibold">Description : {service.Discription}</p>
 
 
-                </div>
+                    </div>
 
-                <div class="p-4 border-t mx-8 mt-2">
-                    <p>User Information</p>
+
 
                     <div class="form-control w-full max-w-xs">
                         <label class="label">
                             <span class="label-text">Name</span>
 
                         </label>
-                        <input type="text" value={user?.displayName} disabled class="input input-bordered w-full max-w-xs" />
+                        <input name='name' type="text" value={user?.displayName} disabled class="input input-bordered w-full max-w-xs" />
 
                     </div>
                     <div class="form-control w-full max-w-xs">
@@ -97,7 +138,7 @@ const PartsDetails = () => {
                             <span class="label-text">Email</span>
 
                         </label>
-                        <input value={user?.email} disabled type="email" class="input input-bordered w-full max-w-xs" />
+                        <input value={user?.email} name='email' disabled type="email" class="input input-bordered w-full max-w-xs" />
 
                     </div>
                     <div class="form-control w-full max-w-xs">
@@ -105,10 +146,12 @@ const PartsDetails = () => {
                             <span class="label-text">Address</span>
 
                         </label>
-                        <input type="text" placeholder="Address" class="input input-bordered w-full max-w-xs" required />
-
+                            <input type="text" placeholder="Address" name='address' class="input input-bordered w-full max-w-xs" required />
+                        <input type='submit' className='btn btn-primary' value='Purchese'></input>
                     </div>
-                    <form className='d-flex ' onSubmit={handleSubmit}>
+                    </form>
+               </div>
+                    <form className='d-flex ' onSubmit={handleIncrease}>
                     <div class="form-control w-full max-w-xs">
                         <label class="label">
                             <span class="label-text">Quantity</span>
@@ -148,7 +191,6 @@ const PartsDetails = () => {
 
 
 
-                </div>
             </div>
         </div>
     );

@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase.init';
+import useToken from '../../Hooks/useToken';
 import Loading from './Loading';
 import SocialLogin from './SocialLogin';
 
@@ -21,7 +22,8 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    if (user) {
+    const [token] = useToken(user)
+    if (token || user) {
         navigate(from, { replace: true });
     }
 
