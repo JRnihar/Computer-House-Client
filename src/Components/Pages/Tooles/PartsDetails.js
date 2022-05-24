@@ -115,17 +115,17 @@ const PartsDetails = () => {
                     </div>
                     <div className='px-6' >
                         <h2 class="font-semibold">Name : {service.name}</h2>
-                        <h2 class="font-semibold">Price : {service.Price}</h2>
+                       
                         <h2 class="font-semibold">Order-quantity : {service.orderquantity}</h2>
                         <h2 class="font-semibold">Available-quantity : {service.availablequantity}</h2>
-                        <p class="font-semibold">Description : {service.Discription}</p>
+                        <p class="font-semibold mb-3">Description : {service.Discription}</p>
 
 
                     </div>
 
 
-
-                    <div class="form-control w-full max-w-xs">
+<hr />
+                    <div class="form-control w-full max-w-xs px-12 mb-7">
                         <label class="label">
                             <span class="label-text">Name</span>
 
@@ -133,7 +133,7 @@ const PartsDetails = () => {
                         <input name='name' type="text" value={user?.displayName} disabled class="input input-bordered w-full max-w-xs" />
 
                     </div>
-                    <div class="form-control w-full max-w-xs">
+                        <div class="form-control w-full max-w-xs px-12">
                         <label class="label">
                             <span class="label-text">Email</span>
 
@@ -141,48 +141,42 @@ const PartsDetails = () => {
                         <input value={user?.email} name='email' disabled type="email" class="input input-bordered w-full max-w-xs" />
 
                     </div>
-                    <div class="form-control w-full max-w-xs">
+                        <div class="form-control w-full max-w-xs px-12">
                         <label class="label">
                             <span class="label-text">Address</span>
 
                         </label>
                             <input type="text" placeholder="Address" name='address' class="input input-bordered w-full max-w-xs" required />
-                        <input type='submit' className='btn btn-primary' value='Purchese'></input>
+                        <input type='submit' className='btn btn-primary mt-5' value='Purchese'></input>
                     </div>
                     </form>
                </div>
                     <form className='d-flex ' onSubmit={handleIncrease}>
-                    <div class="form-control w-full max-w-xs">
+                   
+                    <div class="form-control px-6">
                         <label class="label">
                             <span class="label-text">Quantity</span>
-                       
                         </label>
-                            <input type="number" name='number' placeholder="Quantity Increase " class="input input-bordered w-full max-w-xs" required />
-                        
-                    </div>
-                   
-                      
-                <div className='flex'>
-                            <input className='btn btn-success ms-2 m-5 text-white' type="submit" value="Increase" />
+                        <label class="input-group flex">
+                            <input name='number' type="number" placeholder="Increase-Quantity" class="input input-bordered" required />
                           
-                </div>
-
+                                <input className='btn btn-success text-white' type="submit" value="Increase" />
+                          
+                        </label>
+                    </div>
                     </form>
                     <form className='d-flex ' onSubmit={handleDecrese}>
-                    <div class="form-control w-full max-w-xs">
+                    <div class="form-control px-6">
                         <label class="label">
                             <span class="label-text">Quantity</span>
-                       
                         </label>
-                            <input type="number" name='number' placeholder="Quantity Decrease " class="input input-bordered w-full max-w-xs" required />
-                        
+                        <label class="input-group flex">
+                            <input name='number' type="number" placeholder="Decrease-Quantity" class="input input-bordered" required />
+
+                            <input className='btn btn-success text-white mb-5' type="submit" value="Decrease" />
+
+                        </label>
                     </div>
-                   
-                      
-                <div className='flex'>
-                            <input className='btn btn-success ms-2 m-5 text-white' type="submit" value="Decrease" />
-                          
-                </div>
 
                     </form>
 
