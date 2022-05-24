@@ -18,6 +18,7 @@ import Header from './Components/Shared/Header';
 // import Loading from './Components/Shared/Loading';
 import Login from './Components/Shared/Login';
 import NotFound from './Components/Shared/NotFound';
+import RequireAdmin from './Components/Shared/RequireAdmin';
 import RequireAuth from './Components/Shared/RequireAuth';
 // import RequireAuth from './Components/Shared/RequireAuth';
 import SingUp from './Components/Shared/SingUp';
@@ -49,10 +50,10 @@ function App() {
          <Route path='review' element={<MyReview></MyReview>}></Route>
          <Route path='profile' element={<MyProfile></MyProfile>}></Route>
           <Route path='updateprofile/:id' element={<UpdateProfile></UpdateProfile>}></Route>
-         <Route path='manageOrder' element={<ManageOrder></ManageOrder>}></Route>
-          <Route path='product' element={<MyProduct></MyProduct>}></Route>
-          <Route path='makeAdmin' element={<MakeAdmin></MakeAdmin>}></Route>
-          <Route path='manageProducts' element={<ManageProducts></ManageProducts>}></Route>
+          <Route path='manageOrder' element={<RequireAdmin><ManageOrder></ManageOrder></RequireAdmin>}></Route>
+          <Route path='product' element={<RequireAdmin><MyProduct></MyProduct></RequireAdmin>}></Route>
+          <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
+          <Route path='manageProducts' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
       </Route>
       <Route path='/singUp' element={<SingUp></SingUp>}></Route>
       <Route path='/blog' element={<Blog></Blog> }></Route>
