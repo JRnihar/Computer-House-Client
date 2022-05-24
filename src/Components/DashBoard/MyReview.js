@@ -26,9 +26,9 @@ const MyReview = () => {
     return (
         <div>
             <div>
-                <h2 className=' text-xl font-bold p-5'>Please Add a Reviews!! If You want</h2>
+                <h2 className=' text-xl px-12 font-bold p-5'>Please Add a Reviews!! If You want</h2>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} >
+            <form className='px-12' onSubmit={handleSubmit(onSubmit)} >
                 {/* <input className='mb-3 border-2 w-1/3 rounded-md' placeholder='you name' {...register("name", { required: true })} /> */}
                 <div class="form-control w-full max-w-xs">
                     <label class="label">

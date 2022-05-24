@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MakeAdminRow = ({makeAdmin}) => {
-    const { email ,role } = makeAdmin;
+    const { email ,role ,index} = makeAdmin;
     const makeAdmins=()=>{
         // const url = `http://localhost:5000/user/admin/${email}`
         fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -20,7 +20,7 @@ const MakeAdminRow = ({makeAdmin}) => {
     return (
    
             <tr>
-                <th>1</th>
+                <th>{index}</th>
                 <td>{email}</td>
             <td> {role !== 'admin' && <button onClick={makeAdmins} class="btn btn-xs">Make Admin</button>}</td>
                 <td><button class="btn btn-xs">Remove User</button></td>

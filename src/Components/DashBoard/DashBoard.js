@@ -10,17 +10,17 @@ const DashBoard = () => {
     return (
         <div class="drawer drawer-mobile">
             <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content">
+            <div class="drawer-content bg-teal-200">
                 {/* <!-- Page content here --> */}
                 {/* <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
-                <h2 className='text-2xl font-bold text-purple-500'>Welcome to your Dashboard</h2>
+                <h2 className='text-2xl text-center mt-5 font-bold text-purple-500'>Welcome to your Dashboard</h2>
                 <Outlet></Outlet>
 
             </div>
-            <div class="drawer-side">
+            <div class="drawer-side ">
                 <label for="dashboard-sidebar" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-                    <li><NavLink to='/dashboard/profile'>My Profile</NavLink></li>
+                <ul class="menu p-4 overflow-y-auto w-80 bg-slate-500 text-base-content">
+                    <li className='text-white'><NavLink to='/dashboard/profile'>My Profile</NavLink></li>
 
 
 
@@ -29,16 +29,17 @@ const DashBoard = () => {
                    admin
                             ?
                         <>
-                                <li><NavLink to='/dashboard/manageOrder'> Manage All Orders</NavLink></li>
-                                <li><NavLink to='/dashboard/product'>Add A Product</NavLink></li>
-                                <li><NavLink to='/dashboard/makeAdmin'>Make Admin</NavLink></li>
-                                <li><NavLink to='/dashboard/manageProducts'>Manage Products</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/manageOrder'> Manage All Orders</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/product'>Add A Product</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/makeAdmin'>Make Admin</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/manageProducts'>Manage Products</NavLink></li>
                     </>
             
                   
                    : <>
-                                <li><NavLink to='/dashboard'>My order</NavLink></li>
-                                <li><NavLink to='/dashboard/review'>My Review</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard'>My order</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/review'>My Review</NavLink></li>
+                                
                     </>}
 
                 </ul>

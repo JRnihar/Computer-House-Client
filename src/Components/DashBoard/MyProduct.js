@@ -27,7 +27,7 @@ const MyProduct = () => {
 
     }
     return (
-        <div>
+        <div className='px-12'>
             <div>
                 <h2 className=' text-xl font-bold p-5'> Add a Order</h2>
             </div>

@@ -53,10 +53,10 @@ const MyProfile = () => {
     }, [profiles, setProfile])
     return (
         <div>
-            <h2 className='text-3xl font-semibold my-5 text-purple-500'>My profile</h2>
+            <h2 className='text-3xl font-semibold  px-10 text-purple-500'>My profile</h2>
             <div className='grid grid-cols-1 lg: grid-cols-2'>
                 <div>
-                    <form onSubmit={handleSubmit}>
+                    <form className='px-10' onSubmit={handleSubmit}>
                         <input type="text" placeholder="Name" name='name' disabled value={user?.displayName} class="input input-bordered w-full max-w-xs  mt-3" />
                         <br />
                         <input type="email" placeholder="Email" name='email' disabled value={user?.email} class="input input-bordered w-full max-w-xs mt-2" />
@@ -67,13 +67,13 @@ const MyProfile = () => {
                         <br />
                         <input type="number" placeholder="Phone" name='phone' required class="input input-bordered mt-2 w-full max-w-xs" />
                         <br />
-                        <input type="submit" value='Submit' class="input input-bordered w-full mt-2 max-w-xs text-center bg-success text-lg" />
+                        <input type="submit" value='Submit' class="input input-bordered w-full mt-2 max-w-xs text-center bg-primary text-white text-lg" />
                     </form>
                 </div>
                 {/* ///////////////////////  show information ///////////////////////// */}
                 <div>
                     {
-                        profiles.slice(0,1) .map (profile => <div>
+                        profiles .map (profile => <div>
                             <div class="card w-96 bg-base-100 shadow-xl">
                                 <div class="card-body">
                                     <h2 class="card-title">Name: {profile.name}</h2>

@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     }, [makeAdmins])
     return (
         <div>
-            <h2 className="text-2xl">All Users: {makeAdmins.length}</h2>
+         
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
