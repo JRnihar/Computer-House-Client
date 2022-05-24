@@ -6,20 +6,24 @@ import auth from '../../../Firebase.init';
 import useParts from '../../../Hooks/useParts';
 
 const PartsDetails = () => {
+    // const[decrese,setDecrease]=useState(false)
     const [user, loading] = useAuthState(auth);
     const { Id } = useParams()
     let [service, setService] = useParts(Id)
     const navigate=useNavigate()
     const{email}=user
+    
     const handleIncrease = e => {
         e.preventDefault()
         const number = e.target.number.value;
         let { name, orderquantity, Discription, price, availablequantity } = service
 
-            orderquantity = parseInt(orderquantity) + parseInt(number)
-            console.log(orderquantity);
-            service = { orderquantity, Discription, Discription, availablequantity, name, price }
-            console.log(service);
+            
+                orderquantity = parseInt(orderquantity) - parseInt(number)
+                console.log(orderquantity);
+                service = { orderquantity, Discription, availablequantity, name, price }
+                console.log(service);
+      
     
         const url = `http://localhost:5000/part/${Id}`
         fetch(url, {
@@ -35,6 +39,7 @@ const PartsDetails = () => {
                 
             })
     }
+    
 
 
 
@@ -44,10 +49,11 @@ const PartsDetails = () => {
         const number = e.target.number.value;
         let { name, orderquantity, Discription, price, availablequantity } = service
 
-        orderquantity = parseInt(orderquantity) - parseInt(number)
-        console.log(orderquantity);
-        service = { orderquantity, Discription, Discription, availablequantity, name, price }
-        console.log(service);
+          orderquantity = parseInt(number)+parseInt(orderquantity) 
+          console.log(orderquantity);
+          service = { orderquantity, Discription, availablequantity, name, price }
+          console.log(service);
+    
 
         const url = `http://localhost:5000/part/${Id}`
         fetch(url, {
@@ -63,7 +69,7 @@ const PartsDetails = () => {
 
             })
     }
-
+       
 
   
     const handleSubmit = async (e) => {
@@ -73,6 +79,7 @@ const PartsDetails = () => {
         // const phone = e.target.phone.value
         const productName = service.name
         const img = service.picture
+        
         const description = service.Discription;
         const order = service.orderquantity;
         const availableOrder = service.availablequantity;
@@ -101,6 +108,15 @@ const PartsDetails = () => {
                 }
             })
     }
+    // const decrease=(e)=>{
+    //     const number = e.target.number.value;
+    //     // const availableOrder = service.availablequantity;
+    //     const order = service.orderquantity;
+    //     if (number > order){
+    //         setDecrease()
+    //     }
+     
+    // }
 
     return (
         <div>
@@ -116,7 +132,7 @@ const PartsDetails = () => {
                     <div className='px-6' >
                         <h2 class="font-semibold">Name : {service.name}</h2>
                        
-                        <h2 class="font-semibold">Order-quantity : {service.orderquantity}</h2>
+                        <h2 class="font-semibold">Minimum-quantity : {service.orderquantity}</h2>
                         <h2 class="font-semibold">Available-quantity : {service.availablequantity}</h2>
                         <p class="font-semibold mb-3">Description : {service.Discription}</p>
 
@@ -147,7 +163,7 @@ const PartsDetails = () => {
 
                         </label>
                             <input type="text" placeholder="Address" name='address' class="input input-bordered w-full max-w-xs" required />
-                        <input type='submit' className='btn btn-primary mt-5' value='Purchese'></input>
+                        <input type='submit'  className='btn btn-primary mt-5' value='Purchese'></input>
                     </div>
                     </form>
                </div>
@@ -158,7 +174,7 @@ const PartsDetails = () => {
                             <span class="label-text">Quantity</span>
                         </label>
                         <label class="input-group flex">
-                            <input name='number' type="number" placeholder="Increase-Quantity" class="input input-bordered" required />
+                            <input name='number' defaultValue={service.availablequantity} type="number" placeholder="Increase-Quantity" class="input input-bordered" required />
                           
                                 <input className='btn btn-success text-white' type="submit" value="Increase" />
                           
@@ -171,9 +187,9 @@ const PartsDetails = () => {
                             <span class="label-text">Quantity</span>
                         </label>
                         <label class="input-group flex">
-                            <input name='number' type="number" placeholder="Decrease-Quantity" class="input input-bordered" required />
+                            <input name='number' defaultValue={service.orderquantity} type="number" placeholder="Decrease-Quantity" class="input input-bordered" required />
 
-                            <input className='btn btn-success text-white mb-5' type="submit" value="Decrease" />
+                            <input  className='btn btn-success text-white mb-5' type="submit" value="Decrease" />
 
                         </label>
                     </div>
