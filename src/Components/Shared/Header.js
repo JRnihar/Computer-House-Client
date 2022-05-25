@@ -20,29 +20,29 @@ const Header = () => {
     }
     const menuItem = <>
         {/* <li><Link to='/'>Home</Link></li> */}
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/Blog'>Blog</NavLink></li>
-        <li><NavLink to='/portfolio'>My Portfolio</NavLink></li>
+        <li><NavLink to='/'> <i class="fa-solid fa-house-user"></i>Home</NavLink></li>
+        <li><NavLink to='/Blog'> <i class="fa-brands fa-blogger"></i>Blog</NavLink></li>
+        <li><NavLink to='/portfolio'><i class="fa-solid fa-id-card-clip"></i>My Portfolio</NavLink></li>
         <li>{user &&
 
 
 
 
-            <NavLink to='/dashboard'>DashBoard</NavLink >}</li>
+            <NavLink to='/dashboard'><i class="fa-solid fa-chart-line"></i> DashBoard</NavLink >}</li>
         <li>{user
         ?
 
             <>
-                <button onClick={handleSignOut}>Sing Out</button>
-                <div class="avatar online">
-                    <div class="w-5 rounded-full">
-                        <img src={user?.displayName} alt='' />
+                <button onClick={handleSignOut}> <i class="fa-solid fa-user-plus"></i> Sing Out</button>
+              
+                    <div >
+                       <p>{user?.displayName}</p>
                     </div>
-                </div>
+            
 
             </>
 
-            : <NavLink to='/login'>Login</NavLink > }</li>
+            : <NavLink to='/login'> <i class="fa-solid fa-arrow-right-from-bracket"></i> Login</NavLink > }</li>
        
 
     </>

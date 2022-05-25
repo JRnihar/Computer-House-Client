@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const ShowOrder = ({ tool}) => {
+    
     // console.log(tool);
     const { _id, name, picture, orderquantity, availablequantity, Price } = tool
     const [tools, setTooled] = useState([])
@@ -13,8 +15,8 @@ const ShowOrder = ({ tool}) => {
     
 
     const handleDeleteBtn = id => {
-        const procced = window.confirm('Are you sure for delete ??')
-        if (procced) {
+        
+    
             const url = `https://hidden-waters-77384.herokuapp.com/part/${id}`
             console.log(url);
             fetch(url, {
@@ -25,9 +27,10 @@ const ShowOrder = ({ tool}) => {
                     console.log(data)
                     const remainingItem = tools.filter(tool => tool._id !== id)
                     setTooled(remainingItem)
+                    
                 })
 
-        }
+        
     }
  
     return (
@@ -47,7 +50,22 @@ const ShowOrder = ({ tool}) => {
                                 <p> Minimum Order-Quantity : {tool.orderquantity}</p>
                                 <p>Available-quantity : {tool.availablequantity}</p>
                                 <p>Description : {tool.Description}</p>
-                                <button onClick={() => handleDeleteBtn(tool._id)}  className='btn btn-primary text-white mt-5'>Delete</button>
+                                {/* <button onClick={() => handleDeleteBtn(tool._id)}  className='btn btn-primary text-white mt-5'>Delete</button> */}
+
+                             
+                                <label for="my-modal-6" class="btn modal-button  mt-5 bg-red-800">Delete</label>
+                                <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+                                <div class="modal modal-bottom sm:modal-middle">
+                                    <div class="modal-box">
+                                        <h3 class="font-bold text-lg">Are You Sure You want to Delete????</h3>
+
+                                        <div class="modal-action">
+                                            <label for="my-modal-6" class="btn">Cancel</label>
+                                            <label for="my-modal-6" onClick={() => handleDeleteBtn(tool._id)} class="btn bg-red-800">Delete</label>
+                                        </div>
+                                    </div>
+                                </div>
+
 
                             </div>
                         </div>

@@ -20,7 +20,7 @@ const DashBoard = () => {
             <div class="drawer-side ">
                 <label for="dashboard-sidebar" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-slate-500 text-base-content">
-                    <li className='text-white'><NavLink to='/dashboard/profile'>My Profile</NavLink></li>
+                    <li className='text-white'><NavLink to='/dashboard/profile'> <i class="fa-solid fa-id-badge"></i>My Profile</NavLink></li>
 
 
 
@@ -29,10 +29,10 @@ const DashBoard = () => {
                    admin
                             ?
                         <>
-                                <li className='text-white'><NavLink to='/dashboard/manageOrder'>Manage products </NavLink></li>
-                                <li className='text-white'><NavLink to='/dashboard/product'>Add A Product</NavLink></li>
-                                <li className='text-white'><NavLink to='/dashboard/makeAdmin'>Make Admin</NavLink></li>
-                                <li className='text-white'><NavLink to='/dashboard/manageProducts'>Manage All Orders</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/manageOrder'> <i class="fa-solid fa-people-roof"></i>Manage products </NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/product'> <i class="fa-solid fa-plus"></i>Add A Product</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/makeAdmin'> <i class="fa-solid fa-person"></i>Make Admin</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/manageProducts'> <i class="fa-solid fa-people-roof"></i>Manage All Orders</NavLink></li>
                     </>
             
                   
