@@ -32,7 +32,15 @@ const Header = () => {
         <li>{user
         ?
 
-            <button onClick={handleSignOut}>Sing Out</button>
+            <>
+                <button onClick={handleSignOut}>Sing Out</button>
+                <div class="avatar online">
+                    <div class="w-5 rounded-full">
+                        <img src={user?.displayName} alt='' />
+                    </div>
+                </div>
+
+            </>
 
             : <NavLink to='/login'>Login</NavLink > }</li>
        

@@ -6,7 +6,7 @@ const ShowOrder = ({ tool}) => {
     const [tools, setTooled] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/part')
+        fetch('https://hidden-waters-77384.herokuapp.com/part')
             .then(res => res.json())
             .then(data => setTooled(data))
     }, [tools])
@@ -15,7 +15,7 @@ const ShowOrder = ({ tool}) => {
     const handleDeleteBtn = id => {
         const procced = window.confirm('Are you sure for delete ??')
         if (procced) {
-            const url = `http://localhost:5000/part/${id}`
+            const url = `https://hidden-waters-77384.herokuapp.com/part/${id}`
             console.log(url);
             fetch(url, {
                 method: "DELETE"

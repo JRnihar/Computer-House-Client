@@ -29,7 +29,7 @@ const UpdateProfile = () => {
             ...info, email: email
         }
 
-        const url = `http://localhost:5000/myprofile/${id}`
+        const url = `https://hidden-waters-77384.herokuapp.com/myprofile/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {

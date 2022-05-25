@@ -5,7 +5,7 @@ const ManageOrder = () => {
     const [tools, setTooled] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/part')
+        fetch('https://hidden-waters-77384.herokuapp.com/part')
             .then(res => res.json())
             .then(data => setTooled(data))
     }, [tools])

@@ -13,7 +13,7 @@ const MyOrder = () => {
     useEffect(() => {
 
         const run = async () => {
-            await axios.get(`http://localhost:5000/myorder/${email}`)
+            await axios.get(`https://hidden-waters-77384.herokuapp.com/myorder/${email}`)
                 .then(function (res) {
                 setProduct(res.data)
             })
@@ -26,7 +26,7 @@ const MyOrder = () => {
            <div>
                 <h2 className='text-center text-2xl mt-5 font-bold  text-primary '>My Order</h2>
            </div>
-            <div className='flex flex-wrap -mx-1 lg:-mx-4 px-12 mt-10 gap-5'>
+            <div className='flex flex-wrap  lg:-mx-4 px-12 mt-10 gap-5'>
                {
                    products.map(product=><ShowProducts key={product._id} product={product}></ShowProducts>)
                }
