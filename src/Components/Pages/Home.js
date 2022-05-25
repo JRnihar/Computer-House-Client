@@ -14,11 +14,11 @@ const Home = () => {
                     <div class=" px-6 py-4 mx-auto lg:flex lg:h-128 lg:py-16 ">
                         <div class="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
                             <div class="max-w-lg">
-                                <h1 class="text-xl tracking-wide text-white text-gray-800 lg:text-3xl lg:text-4xl">My Computer House</h1>
-                                <p class="mt-4 text-gray-300 text-gray-600">A computer is a digital electronic machine that can be programmed to carry out sequences of arithmetic or logical operations (computation) automatically. Modern computers can perform generic sets of operations known as programs. These programs enable computers to perform a wide range of tasks. </p>
+                                <h1 class="text-xl tracking-wide text-primary font-bold mt-10  lg:text-3xl lg:text-4xl">My Computer House</h1>
+                                <p class="mt-4 lead text-gray-600">A computer is a digital electronic machine that can be programmed to carry out sequences of arithmetic or logical operations (computation) automatically. Modern computers can perform generic sets of operations known as programs. These programs enable computers to perform a wide range of tasks. </p>
                                 <div class="mt-6">
                                     <a href="#"
-                                        class="inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400">
+                                        class="inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-primary rounded-md hover:bg-blue-400">
                                         Read More</a>
                                 </div>
                             </div>
@@ -89,16 +89,8 @@ const Home = () => {
 
                 </div>
 
-                
-              
                 <script>
 		
-		
-		
-	
-
-		  
-
                 </script>
 
             </body>
@@ -137,8 +129,8 @@ const Home = () => {
                             </div>
                         </div>
                         <div class="stat-value">86%</div>
-                        <div class="stat-title">Tasks done</div>
-                        <div class="stat-desc text-secondary">31 tasks remaining</div>
+                        <div class="stat-title">Delivery done</div>
+                        <div class="stat-desc text-secondary">31 Delivery remaining</div>
                     </div>
 
                 </div>
