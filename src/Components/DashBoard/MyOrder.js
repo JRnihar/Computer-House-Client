@@ -9,7 +9,7 @@ const MyOrder = () => {
     const email = user?.email
 
     const [products, setProduct] = useState([])
-    console.log(products);
+    // console.log(products);
     useEffect(() => {
 
         const run = async () => {
@@ -24,9 +24,9 @@ const MyOrder = () => {
     return (
         <div>
            <div>
-                <h2 className='text-center text-xl text-primary'>My Order</h2>
+                <h2 className='text-center text-2xl mt-5 font-bold  text-primary '>My Order</h2>
            </div>
-            <div className='flex flex-wrap -mx-1 lg:-mx-4 gap-5'>
+            <div className='flex flex-wrap -mx-1 lg:-mx-4 px-12 mt-10 gap-5'>
                {
                    products.map(product=><ShowProducts key={product._id} product={product}></ShowProducts>)
                }

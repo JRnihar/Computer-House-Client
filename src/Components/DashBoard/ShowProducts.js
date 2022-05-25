@@ -2,13 +2,13 @@ import React from 'react';
 import UseOrder from '../../Hooks/UseOrder';
 
 const ShowProducts = ({ product}) => {
-    console.log(product);
+    // console.log(product);
     const [products, setProducts]=UseOrder()
     const handleDeleteBtn = id => {
         const procced = window.confirm('Are you sure for delete ??')
         if (procced) {
             const url = `http://localhost:5000/myorder/${id}`
-                console.log(url);
+                // console.log(url);
             fetch(url, {
                 method: "DELETE"
             })
@@ -34,7 +34,7 @@ const ShowProducts = ({ product}) => {
                     <p>productName : {product.productName}</p>
                     <p>Order : {product.order}</p>
                     <p>AvailableOrder : {product.availableOrder}</p>
-                    <p>Description : {product.description}</p>
+                    <p>Description : {product.Description}</p>
                     <button onClick={() => handleDeleteBtn(product._id)} className='btn btn-primary'>Delete</button>
                 </div>
             </div>

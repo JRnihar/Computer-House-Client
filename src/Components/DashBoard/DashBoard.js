@@ -29,10 +29,10 @@ const DashBoard = () => {
                    admin
                             ?
                         <>
-                                <li className='text-white'><NavLink to='/dashboard/manageOrder'> Manage All Orders</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/manageOrder'>Manage products </NavLink></li>
                                 <li className='text-white'><NavLink to='/dashboard/product'>Add A Product</NavLink></li>
                                 <li className='text-white'><NavLink to='/dashboard/makeAdmin'>Make Admin</NavLink></li>
-                                <li className='text-white'><NavLink to='/dashboard/manageProducts'>Manage Products</NavLink></li>
+                                <li className='text-white'><NavLink to='/dashboard/manageProducts'>Manage All Orders</NavLink></li>
                     </>
             
                   

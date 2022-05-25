@@ -31,7 +31,7 @@ const MyProduct = () => {
             <div>
                 <h2 className=' text-xl font-bold p-5'> Add a Order</h2>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} >
+            <form className='card bg-purple-300 justify-center px-16' onSubmit={handleSubmit(onSubmit)} >
 
                 <div class="form-control w-full max-w-xs">
                     <label class="label">
@@ -74,11 +74,11 @@ const MyProduct = () => {
                         <span class="label-text">Picture</span>
 
                     </label>
-                    <input placeholder="picture" class="input input-bordered w-full max-w-xs" required {...register("picture")} />
+                    <input placeholder="picture" class="input input-bordered w-full " required {...register("picture")} />
 
                 </div>
                 <br />
-                <input className='mb-3 border-2 w-1/3 rounded-md bg-primary py-2' type="submit" value='Add' />
+                <input className='mb-3 border-2 w-full rounded-md bg-primary py-2' type="submit" value='Add' />
 
             </form>
         </div>

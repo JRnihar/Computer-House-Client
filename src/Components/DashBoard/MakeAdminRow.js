@@ -20,7 +20,7 @@ const MakeAdminRow = ({makeAdmin}) => {
     return (
    
             <tr>
-                <th>{index}</th>
+                
                 <td>{email}</td>
             <td> {role !== 'admin' && <button onClick={makeAdmins} class="btn btn-xs">Make Admin</button>}</td>
                 <td><button class="btn btn-xs">Remove User</button></td>

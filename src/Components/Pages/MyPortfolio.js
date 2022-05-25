@@ -5,10 +5,10 @@ import signature from '../../img/signature (2).png'
 const MyPortfolio = () => {
     return (
         <div>
-            
+
             <div class="bg-dark-gray w-full min-h-screen">
                 <h3 class="uppercase  font-medium text-green text-2xl text-center p-10">My Portfolio</h3>
-               
+
                 <div class="w-full max-w-6xl mx-auto px-4 py-8 flex justify-between md:flex-no-wrap flex-wrap">
                     <div class="md:w-1/3 w-full">
                         <div>
@@ -23,11 +23,11 @@ const MyPortfolio = () => {
                         </section>
 
                         <section class="mt-16">
-                            
+
                         </section>
 
                         <section class="mt-16">
-                           
+
                         </section>
                     </div>
                     <div class="md:w-2/4 w-full">
@@ -53,17 +53,17 @@ const MyPortfolio = () => {
                                 <ul class="text-white list-disc list-inside mt-4">
                                     <li> SSC (Science) </li>
                                     <li> HSC (Science)</li>
-                                    <li> Bachelor of Arts: 
+                                    <li> Bachelor of Arts:
                                         Chittagong Govt. College <br />
                                         ( Under National University ).
                                     </li>
                                 </ul>
                             </div>
 
-                         
+
                         </div>
                         <section class="mt-16">
-                           
+
                             <div class="mt-8">
                                 <h3 class="uppercase font-medium text-green text-2xl">Contact Info:</h3>
                                 <div class="h-1 bg-green w-48 my-4">
@@ -86,9 +86,11 @@ const MyPortfolio = () => {
 
                             <div class="text-white">
                                 <ul class="text-white list-disc list-inside mt-4">
-                                    <li><a href="http://" target="_blank" rel="noopener noreferrer">dfgfg</a></li>
-                                    <li><a href="http://" target="_blank" rel="noopener noreferrer">dfgfg</a></li>
-                                   
+                                    <li><a href="https://assigment-10-ce427.firebaseapp.com/" target="_blank" rel="noopener noreferrer">DELPHINUS-SHOP
+                                    </a></li>
+                                    <li><a href="https://photographer-services.web.app/" target="_blank" rel="noopener noreferrer">Mahi-Photography
+</a></li>
+
                                 </ul>
 
                             </div>

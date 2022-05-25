@@ -19,7 +19,7 @@ const SingUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     let errorElement;
     if (error) {
-        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+        errorElement = <p className='text-red-700'>Error: {error?.message}</p>
     }
 
     const navigate = useNavigate()
@@ -48,15 +48,14 @@ const SingUp = () => {
                         class="p-4 py-6 text-white bg-teal-500	 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
                     >
                         <div class="my-3 text-4xl font-bold tracking-wider text-center">
-                            <a href="#">K-WD</a>
+                            <a>Computer House</a>
                         </div>
                         <p class="mt-6 font-normal text-center text-gray-300 md:mt-0">
-                            With the power of K-WD, you can now focus only on functionaries for your digital products, while leaving the
-                            UI design on us!
+                            A computer is a digital electronic machine that can be programmed to carry out sequences of arithmetic or logical operations (computation) automatically.
                         </p>
                         <p class="flex flex-col items-center justify-center mt-10 text-center">
                             <span>Do you have an account?</span>
-                            <Link to='/login'>Please Login !</Link>
+                            <button className='w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-teal-700	 rounded-md shadow hover:bg-teal-500 mt-5	focus:outline-none focus:ring-blue-200 focus:ring-4"'><Link to='/login'>Please Login !</Link></button>
                         </p>
                         <p class="mt-6 text-sm text-center text-gray-300">
                             Read our <a href="#" class="underline">terms</a> and <a href="#" class="underline">conditions</a>
@@ -74,6 +73,7 @@ const SingUp = () => {
                                     name='name'
                                     autofocus
                                     class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                                    required
                                 />
                             </div>
                             <div class="flex flex-col space-y-1">
@@ -85,6 +85,7 @@ const SingUp = () => {
                                     name='email'
                                     autofocus
                                     class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                                    required
                                 />
                             </div>
                             <div class="flex flex-col space-y-1">
@@ -98,6 +99,7 @@ const SingUp = () => {
                                     type="password"
                                     id="password"
                                     class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                                    required
                                 />
                             </div>
                             {errorElement}

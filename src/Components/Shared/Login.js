@@ -37,7 +37,7 @@ const Login = () => {
     }
     let errorElement;
     if (error) {
-        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+        errorElement = <p className='text-red-700'>Error: {error?.message}</p>
     }
 
     const handelSubmit =  (e) => {
@@ -58,15 +58,14 @@ const Login = () => {
                         class="p-4 py-6 text-white bg-blue-500 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
                     >
                         <div class="my-3 text-4xl font-bold tracking-wider text-center">
-                            <a href="#">K-WD</a>
+                            <a>Computer House</a>
                         </div>
                         <p class="mt-6 font-normal text-center text-gray-300 md:mt-0">
-                            With the power of K-WD, you can now focus only on functionaries for your digital products, while leaving the
-                            UI design on us!
+                            A computer is a digital electronic machine that can be programmed to carry out sequences of arithmetic or logical operations (computation) automatically.
                         </p>
                         <p class="flex flex-col items-center justify-center mt-10 text-center">
                             <span>Don't have an account?</span>
-                            <Link to='/singUp'>Get Started!</Link>
+                            <button className='w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-700 rounded-md drop-shadow-2xl hover:bg-blue-500 mt-5 focus:outline-none focus:ring-blue-200 focus:ring-4"'><Link to='/singUp'>Get Started!</Link></button>
                         </p>
                        
                     </div>
@@ -83,6 +82,7 @@ const Login = () => {
                                     id="email"
                                     autofocus
                                     class="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                                    required
                                 />
                             </div>
                             <div class="flex flex-col space-y-1">
@@ -109,6 +109,7 @@ const Login = () => {
                                 />
                                 <label for="remember" class="text-sm font-semibold text-gray-500">Remember me</label>
                             </div>
+                            {errorElement}
                             <div>
                                 <button
                                     type="submit"

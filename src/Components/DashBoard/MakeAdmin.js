@@ -12,14 +12,14 @@ const MakeAdmin = () => {
     return (
         <div>
          
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto px-12 mt-6">
                 <table class="table w-full">
                     <thead>
                         <tr>
-                            <th></th>
+                           
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Make Admin</th>
+                            <th>Remove User</th>
                         </tr>
                     </thead>
                     <tbody>
