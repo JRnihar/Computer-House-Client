@@ -5,6 +5,8 @@ import auth from '../../Firebase.init';
 import useToken from '../../Hooks/useToken';
 import Loading from './Loading';
 import SocialLogin from './SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const emailRef = useRef('')
@@ -90,7 +92,7 @@ const Login = () => {
                                     <label for="password" class="text-sm font-semibold text-gray-500">Password</label>
                                     <p onClick={async () => {
                                         await sendPasswordResetEmail(email);
-                                        alert('Sent email');
+                                        toast('Sent email');
                                     }}  class="text-sm text-blue-600 hover:underline focus:text-blue-800">Forgot Password?</p>
                                 </div>
                                 <input
@@ -119,6 +121,7 @@ const Login = () => {
                                 </button>
                             </div>
                             <SocialLogin></SocialLogin>
+                            <ToastContainer />
                             
                         </form>
                     </div>

@@ -2,6 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const MyReview = () => {
     const navigate=useNavigate()
     const{register,handleSubmit}=useForm()
@@ -18,7 +21,7 @@ const MyReview = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
-                // toast('Review added done')
+                toast('Review added done')
                 navigate('/home')
             })
 
@@ -28,7 +31,7 @@ const MyReview = () => {
             <div>
                 <h2 className=' text-xl px-12 font-bold p-5'>Please Add a Reviews!! If You want</h2>
             </div>
-            <form className='px-12' onSubmit={handleSubmit(onSubmit)} >
+            <form className='card bg-purple-300 justify-center px-16' onSubmit={handleSubmit(onSubmit)} >
                 {/* <input className='mb-3 border-2 w-1/3 rounded-md' placeholder='you name' {...register("name", { required: true })} /> */}
                 <div class="form-control w-full max-w-xs">
                     <label class="label">
@@ -76,6 +79,7 @@ const MyReview = () => {
                 <input className='mb-3 border-2 w-1/3 rounded-md bg-primary py-2' type="submit" value='Add' />
 
             </form>
+            <ToastContainer />
         </div>
     );
 };

@@ -1,11 +1,13 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 import auth from '../../Firebase.init';
 import UseProfile from '../../Hooks/UseProfile';
 // import UseProfile from '../../Hooks/UseProfile';
 // import auth from '../firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateProfile = () => {
     const [user] = useAuthState(auth)
@@ -40,13 +42,13 @@ const UpdateProfile = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    // toast('Update Done')
+                    toast('Update Done')
                 })
     }
 
     return (
         <div>
-            <form onSubmit={handleUpdate} >
+            <form className='px-12' onSubmit={handleUpdate} >
                 <input type="text" placeholder="Name" name='name' disabled value={user?.displayName} class="input input-bordered w-full max-w-xs  mt-3" />
                 <br />
                 <input type="email" placeholder="Email" name='email' disabled value={user?.email} class="input input-bordered w-full max-w-xs mt-2" />
@@ -59,6 +61,7 @@ const UpdateProfile = () => {
                 <br />
                 <input type="submit" value='Update' class="input input-bordered w-full mt-2 max-w-xs text-center bg-success text-lg" />
             </form>
+            <ToastContainer />
         </div>
     );
 };

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const MyProduct = () => {
@@ -21,7 +23,7 @@ const MyProduct = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
-                // toast('Review added done')
+                toast ('Product added done')
                 navigate('/home')
             })
 
@@ -81,6 +83,7 @@ const MyProduct = () => {
                 <input className='mb-3 border-2 w-full rounded-md bg-primary py-2' type="submit" value='Add' />
 
             </form>
+            <ToastContainer />
         </div>
     );
 };

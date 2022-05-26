@@ -155,8 +155,8 @@ const Home = () => {
                         </div>
                         <div class="lg:w-7/12 lg:mt-0 mt-8">
                             <div class="w-full h-full bg-red-200">
-                                <img src="https://thumbs.dreamstime.com/b/computer-helmet-construction-tools-white-background-table-lamp-60023628.jpg" alt="apartment design" class="w-full sm:block hidden" />
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHVBpi6iqG4GetNDfszidgU7sM3TQ2kUFS0w&usqp=CAU" alt="apartment design" class="sm:hidden block w-full" />
+                                <img src="https://thumbs.dreamstime.com/b/computer-helmet-construction-tools-white-background-table-lamp-60023628.jpg" alt="apartment design" class="w-full sm:block " />
+                              
                             </div>
                             <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-8 gap-6 lg:mt-8 md:mt-6 mt-4">
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHVBpi6iqG4GetNDfszidgU7sM3TQ2kUFS0w&usqp=CAU" class="w-full" alt="kitchen" />
