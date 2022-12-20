@@ -8,7 +8,7 @@ const ShowOrder = ({ tool}) => {
     const [tools, setTooled] = useState([])
 
     useEffect(() => {
-        fetch('https://hidden-waters-77384.herokuapp.com/part')
+        fetch('https://final-project-7jsd.onrender.com/part')
             .then(res => res.json())
             .then(data => setTooled(data))
     }, [tools])
@@ -17,7 +17,7 @@ const ShowOrder = ({ tool}) => {
     const handleDeleteBtn = id => {
         
     
-            const url = `https://hidden-waters-77384.herokuapp.com/part/${id}`
+            const url = `https://final-project-7jsd.onrender.com/part/${id}`
             console.log(url);
             fetch(url, {
                 method: "DELETE"

@@ -13,7 +13,7 @@ const MyOrder = () => {
     useEffect(() => {
 
         const run = async () => {
-            await axios.get(`https://hidden-waters-77384.herokuapp.com/myorder/${email}`)
+            await axios.get(`https://final-project-7jsd.onrender.com/myorder/${email}`)
                 .then(function (res) {
                 setProduct(res.data)
             })

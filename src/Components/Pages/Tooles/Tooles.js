@@ -6,7 +6,7 @@ const Tooles = () => {
     const[tools,setTooled]=useState([])
 
     useEffect(()=>{
-        fetch('https://hidden-waters-77384.herokuapp.com/part')
+        fetch('https://final-project-7jsd.onrender.com/part')
         .then(res=>res.json())
             .then(data => setTooled(data))
     },[])

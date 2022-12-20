@@ -25,7 +25,7 @@ const PartsDetails = () => {
                 console.log(service);
       
     
-        const url = `https://hidden-waters-77384.herokuapp.com/part/${Id}`
+        const url = `https://final-project-7jsd.onrender.com/part/${Id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -55,7 +55,7 @@ const PartsDetails = () => {
           console.log(service);
     
 
-        const url = `https://hidden-waters-77384.herokuapp.com/part/${Id}`
+        const url = `https://final-project-7jsd.onrender.com/part/${Id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -100,7 +100,7 @@ const PartsDetails = () => {
         const newProduct = {
             ...product, email: email
         }
-        await axios.post('https://hidden-waters-77384.herokuapp.com/addItem', newProduct)
+        await axios.post('https://final-project-7jsd.onrender.com/addItem', newProduct)
             .then(function (res) {
                 if (res?.data?.insertedId) {
                    

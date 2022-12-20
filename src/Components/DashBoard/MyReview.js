@@ -10,7 +10,7 @@ const MyReview = () => {
     const{register,handleSubmit}=useForm()
     const onSubmit = data => {
 
-        const url = 'https://hidden-waters-77384.herokuapp.com/review';
+        const url = 'https://final-project-7jsd.onrender.com/review';
         fetch(url, {
             method: 'POST',
             headers: {

@@ -31,7 +31,7 @@ const UpdateProfile = () => {
             ...info, email: email
         }
 
-        const url = `https://hidden-waters-77384.herokuapp.com/myprofile/${id}`
+        const url = `https://final-project-7jsd.onrender.com/myprofile/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {

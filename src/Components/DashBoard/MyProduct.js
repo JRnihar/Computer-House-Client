@@ -12,7 +12,7 @@ const MyProduct = () => {
     const { register, handleSubmit } = useForm()
     const onSubmit = data => {
 
-        const url = 'https://hidden-waters-77384.herokuapp.com/part';
+        const url = 'https://final-project-7jsd.onrender.com/part';
         fetch(url, {
             method: 'POST',
             headers: {

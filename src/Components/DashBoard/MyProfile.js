@@ -28,7 +28,7 @@ const MyProfile = () => {
             ...info, email: email
         }
 
-        await axios.post('https://hidden-waters-77384.herokuapp.com/myprofile', newInfo)
+        await axios.post('https://final-project-7jsd.onrender.com/myprofile', newInfo)
             .then(function (res) {
                 if (res?.data?.insertedId) {
                     // toast('Save Information')
@@ -43,7 +43,7 @@ const MyProfile = () => {
     useEffect(() => {
 
         const run = async () => {
-            await axios.get(`https://hidden-waters-77384.herokuapp.com/myprofile/${email}`)
+            await axios.get(`https://final-project-7jsd.onrender.com/myprofile/${email}`)
                 .then(function (res) {
                 setProfile(res.data)
             })

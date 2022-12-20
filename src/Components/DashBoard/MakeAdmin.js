@@ -4,7 +4,7 @@ import MakeAdminRow from './MakeAdminRow';
 const MakeAdmin = () => {
     const [makeAdmins, setMakeAdmins] = useState([])
     useEffect(() => {
-        fetch('https://hidden-waters-77384.herokuapp.com/user')
+        fetch('https://final-project-7jsd.onrender.com/user')
             .then(res => res.json())
             // .then(data=>setReviews(data))
             .then(data => setMakeAdmins(data))

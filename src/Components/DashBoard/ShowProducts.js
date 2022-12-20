@@ -9,7 +9,7 @@ const ShowProducts = ({ product}) => {
     const handleDeleteBtn = id => {
         // const procced = window.confirm('Are you sure for delete ??')
      
-            const url = `https://hidden-waters-77384.herokuapp.com/myorder/${id}`
+            const url = `https://final-project-7jsd.onrender.com/myorder/${id}`
                 // console.log(url);
             fetch(url, {
                 method: "DELETE"
